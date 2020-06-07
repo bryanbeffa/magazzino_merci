@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="de1df303-18f6-4090-85ad-f8d64e29ae6f" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1RbumIuruPzpBMauHNmlIKmF0wG" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/views/supplier" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\magazzino_merci\application\views\supplier" />
+      <recent name="C:\xampp\htdocs\magazzino_merci\application\libs\img\svg" />
+      <recent name="C:\xampp\htdocs\magazzino_merci\application\views\user" />
+      <recent name="C:\xampp\htdocs\magazzino_merci\application\views\error" />
+      <recent name="C:\xampp\htdocs\magazzino_merci\application\views\catalog" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\magazzino_merci\application\libs\img\svg" />
+      <recent name="C:\xampp\htdocs\magazzino_merci\application\libs\icons" />
+      <recent name="C:\xampp\htdocs\magazzino_merci\application\views\loign" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de1df303-18f6-4090-85ad-f8d64e29ae6f" name="Default Changelist" comment="" />
+      <created>1569948273465</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569948273465</updated>
+      <workItem from="1569948274649" duration="487000" />
+      <workItem from="1569948845173" duration="51000" />
+      <workItem from="1569967031905" duration="10000" />
+      <workItem from="1572359265402" duration="56000" />
+      <workItem from="1580395070388" duration="2515000" />
+      <workItem from="1580473156552" duration="10466000" />
+      <workItem from="1580584853028" duration="865000" />
+      <workItem from="1580587069413" duration="1765000" />
+      <workItem from="1580589307992" duration="632000" />
+      <workItem from="1580714511711" duration="19620000" />
+      <workItem from="1580743743062" duration="64000" />
+      <workItem from="1580744989793" duration="1036000" />
+      <workItem from="1580801072740" duration="9972000" />
+      <workItem from="1580891782344" duration="11932000" />
+      <workItem from="1580991349814" duration="10125000" />
+      <workItem from="1581077771553" duration="10619000" />
+      <workItem from="1581088862236" duration="184000" />
+      <workItem from="1581190413579" duration="1540000" />
+      <workItem from="1581192497647" duration="5535000" />
+      <workItem from="1581319256420" duration="18492000" />
+      <workItem from="1581405952287" duration="25000" />
+      <workItem from="1581408495255" duration="30000" />
+      <workItem from="1581509986200" duration="10342000" />
+      <workItem from="1581541885794" duration="92000" />
+      <workItem from="1581542089914" duration="583000" />
+      <workItem from="1581596351987" duration="10017000" />
+      <workItem from="1581684507830" duration="623000" />
+      <workItem from="1581685146210" duration="8674000" />
+      <workItem from="1581722752549" duration="5052000" />
+      <workItem from="1581775343778" duration="713000" />
+      <workItem from="1581785888660" duration="1798000" />
+      <workItem from="1581845203852" duration="2597000" />
+      <workItem from="1581868000522" duration="406000" />
+      <workItem from="1581924109162" duration="14076000" />
+      <workItem from="1582013393887" duration="24000" />
+      <workItem from="1582114689383" duration="10562000" />
+      <workItem from="1582127067026" duration="970000" />
+      <workItem from="1582201107876" duration="10892000" />
+      <workItem from="1582288140478" duration="13576000" />
+      <workItem from="1582381449170" duration="2554000" />
+      <workItem from="1582387758243" duration="3815000" />
+      <workItem from="1582903887647" duration="482000" />
+      <workItem from="1582926808485" duration="11000" />
+      <workItem from="1583134591657" duration="11774000" />
+      <workItem from="1583160635697" duration="1934000" />
+      <workItem from="1583324160433" duration="10964000" />
+      <workItem from="1583410431538" duration="8732000" />
+      <workItem from="1583421673902" duration="321000" />
+      <workItem from="1583423061028" duration="954000" />
+      <workItem from="1583497432466" duration="7860000" />
+      <workItem from="1583738457346" duration="13754000" />
+      <workItem from="1583825639277" duration="17000" />
+      <workItem from="1583929265855" duration="9512000" />
+      <workItem from="1584105402147" duration="2291000" />
+      <workItem from="1584184551925" duration="27000" />
+      <workItem from="1584343468464" duration="11114000" />
+      <workItem from="1584363041581" duration="19000" />
+      <workItem from="1584367430690" duration="4366000" />
+      <workItem from="1584533547780" duration="7324000" />
+      <workItem from="1584948727298" duration="9297000" />
+      <workItem from="1584972795759" duration="3077000" />
+      <workItem from="1585140193907" duration="7506000" />
+      <workItem from="1585227916688" duration="7484000" />
+      <workItem from="1585316657220" duration="2837000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

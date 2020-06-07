@@ -1,0 +1,146 @@
+# CREATE DATABASE magazzino_merci_db
+DROP DATABASE IF EXISTS magazzino_merci_db;
+CREATE DATABASE magazzino_merci_db;
+
+USE magazzino_merci_db;
+
+CREATE TABLE permessi(
+    id int primary key auto_increment,
+    descrizione varchar(30) not null
+);
+
+CREATE TABLE tipo_operazione(
+	id int primary key auto_increment,
+    nome varchar(30) not null
+);
+
+CREATE TABLE utenti(
+	id int primary key auto_increment,
+    cap int not null,
+    citta varchar(50) not null,
+	eliminato tinyint(1) not null default 0,
+    id_permesso int not null,
+    via varchar(50) not null,
+    nome varchar(50) not null,
+    cognome varchar(50) not null,
+    password varchar(255) not null,
+    telefono varchar(20) not null,
+    email varchar(255) not null unique,
+    foreign key (id_permesso) references permessi(id)
+);
+
+CREATE TABLE categoria(
+	id int primary key auto_increment,
+    nome varchar(50) not null unique,
+    id_utente int,
+    foreign key (id_utente) references utenti(id)
+);
+
+CREATE TABLE articoli(
+	id int primary key auto_increment,
+	id_categoria int,
+	percorso_immagine varchar(255),
+    nome varchar(50) not null,
+    in_magazzino tinyint(1) not null,
+	eliminato tinyint(1),
+    disponibile_il date,
+id_utente int,
+    quantita int not null,
+	data_scadenza date not null,
+    foreign key (id_categoria) references categoria(id),
+foreign key (id_utente) references utenti(id)
+);
+
+CREATE TABLE log(
+	id int primary key auto_increment,
+	data timestamp not null default current_timestamp,
+    utente_richiedente int,
+    id_tipo_operazione int,
+    id_articolo int,
+	id_ordine int,
+    foreign key (id_tipo_operazione) references tipo_operazione (id),
+    foreign key (id_articolo) references articoli(id)
+);
+
+CREATE TABLE ordine(
+	data_ordine timestamp default current_timestamp,
+    quantita_ordine int not null,
+    accettato tinyint(1) default null,
+    id_utente int,
+    id_articolo int,
+    foreign key (id_utente) references utenti(id),
+    foreign key (id_articolo) references articoli(id),
+    primary key (id_utente, id_articolo, data_ordine)
+);
+
+
+/******************* Delete old record ******************/
+DELIMITER //
+
+CREATE PROCEDURE deleteOldRecords()
+BEGIN
+    DELETE FROM LOG WHERE utente_richiedente IS NULL AND id_tipo_operazione < 4;
+END //
+
+DELIMITER ;
+
+
+/******************* Check expired articles ******************/
+DELIMITER //
+
+CREATE PROCEDURE checkExpiredArticles()
+BEGIN
+
+    DECLARE finished int DEFAULT 0;
+    DECLARE article_id int;
+    DECLARE expire_date date;
+    
+    -- declare cursor article
+    DECLARE curArticle 
+        CURSOR FOR 
+            SELECT id, data_scadenza FROM articoli WHERE eliminato = 0 AND in_magazzino = 1;
+            
+    -- declare NOT FOUND handler
+    DECLARE CONTINUE HANDLER 
+        FOR NOT FOUND SET finished = 1;
+           
+    -- delete old record
+    call deleteOldRecords();
+        
+    OPEN curArticle;
+    
+     getArticleId: LOOP
+        FETCH curArticle INTO article_id, expire_date;
+        IF finished = 1 THEN 
+            LEAVE getArticleId;
+            
+        -- article expired
+        ELSEIF expire_date <= date(now()) THEN
+        
+            -- insert into log
+            INSERT INTO LOG(id_articolo, id_tipo_operazione) VALUES (article_id, 4);
+            
+            -- delete article from storage
+            UPDATE articoli SET eliminato = 1 WHERE id = article_id;
+            
+        -- article almost expired
+        ELSEIF expire_date <= date(now() + INTERVAL 2 day) THEN
+            
+            -- insert into log
+            INSERT INTO LOG(id_articolo, id_tipo_operazione) VALUES (article_id, 3);
+        END IF;
+    END LOOP getArticleId;
+    CLOSE curArticle;
+        
+END //
+
+DELIMITER ;
+
+/******************** Automatic event *******************/
+SET GLOBAL event_scheduler = ON;
+
+CREATE EVENT daily_articles_check
+ON SCHEDULE EVERY 1 day
+DO
+call checkExpiredArticles();
+

@@ -1,0 +1,49 @@
+.vertical-align {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%) !important;
+    -ms-transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
+}
+
+#login-background{
+    background-image: url("../img/login_background.jpg");
+    background-size: 100% auto;
+}
+
+.horizontal-align-center{
+    margin: auto;
+}
+
+.bin-icon{
+    width: 20px;
+    height: 20px;
+}
+
+.icon-md{
+    width: 25px;
+    height: 25px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.img-catalog-height{
+    max-height: 110px;
+}
+
+.img-table-height{
+    max-height: 80px;
+}
